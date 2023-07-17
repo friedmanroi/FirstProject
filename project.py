@@ -32,7 +32,7 @@ def SaveList_to_File(results_list, filename):
 def SecondCycle():
     while True:
         try:
-            answer2 = input()
+            answer2 = str(input("would you like to start over?\nY/N?\n"))
             if answer2 not in ["Y","N"]:
              raise ValueError()
             elif 'Y' in answer2:
@@ -51,21 +51,9 @@ def main():
          print("please choose an option 1/2:\n 1. dollars to shekels\n 2.shekels to dollars\n")
          results = []
          CashMachine()
-         print("would you like to start over?\nY/N?\n")
          # answer2 = str(input())
          # print(answer2)
          SecondCycle()
+
+
 main()
-
-
-
-
-
-
-
-
-
-
-
-
-
