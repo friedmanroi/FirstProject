@@ -30,20 +30,22 @@ def SaveList_to_File(results_list, filename):
 # print("would you like to start over?\nY/N?\n")
 # answer2 = str(input())
 def SecondCycle():
-    answer2 = input()
-    try:
-        if answer2 not in ["Y","N"]:
-          raise ValueError()
-        elif 'Y' in answer2:
-          print("please choose an option 1/2:\n 1. dollars to shekels\n 2.shekels to dollars\n")
-          CashMachine()
-          SaveList_to_File(results, "results.txt")
-        elif 'N' in answer2:
-          print("thank you for using our currnecy convertor")
-          print(results)
-          SaveList_to_File(results,"results.txt")
-    except ValueError:
-        print("plaese type again Y/N\n")
+    while True:
+        try:
+            answer2 = input()
+            if answer2 not in ["Y","N"]:
+             raise ValueError()
+            elif 'Y' in answer2:
+             print("please choose an option 1/2:\n 1. dollars to shekels\n 2.shekels to dollars\n")
+             CashMachine()
+             SaveList_to_File(results, "results.txt")
+            elif 'N' in answer2:
+                print("thank you for using our currnecy convertor")
+                print(results)
+                SaveList_to_File(results,"results.txt")
+                break
+        except ValueError:
+          print("please type again Y/N\n")
 def main():
          print("welcome to currency converter")
          print("please choose an option 1/2:\n 1. dollars to shekels\n 2.shekels to dollars\n")
